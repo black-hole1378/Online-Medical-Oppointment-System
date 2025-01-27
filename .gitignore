@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Frontend (Next.js) build output
+frontend/.next/
+frontend/out/
+
+# Backend (Strapi) build output
+backend/.build/
+backend/.tmp/
+backend/.cache/
+
+# Environment variables
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+backend/.env
+backend/.env.local
+backend/.env.*.local
+
+# Editor/IDE settings
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Strapi uploads (optional)
+backend/public/uploads/
+
+# Coverage directories (if using test coverage tools)
+frontend/coverage/
+backend/coverage/
+
+# Temporary files
+*.swp
+*.swo
