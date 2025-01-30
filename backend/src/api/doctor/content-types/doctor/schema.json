@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "patients",
+  "collectionName": "doctors",
   "info": {
-    "singularName": "patient",
-    "pluralName": "patients",
-    "displayName": "Patient",
+    "singularName": "doctor",
+    "pluralName": "doctors",
+    "displayName": "Doctor",
     "description": ""
   },
   "options": {
@@ -12,52 +12,55 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "fullname": {
+    "name": {
       "type": "string",
       "required": true
+    },
+    "profile_picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     },
     "email": {
       "type": "email",
       "required": true,
       "unique": true
     },
-    "phone": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
-    "birth": {
-      "type": "date"
-    },
     "slug_id": {
       "type": "uid",
-      "targetField": "fullname"
+      "targetField": "name"
     },
-    "gender": {
-      "type": "enumeration",
-      "enum": [
-        "Male",
-        "Female",
-        "Other"
-      ],
+    "phone_number": {
+      "type": "json"
+    },
+    "biography": {
+      "type": "text"
+    },
+    "expreience": {
+      "type": "string",
       "required": true
+    },
+    "rating": {
+      "type": "decimal"
     },
     "appointments": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::appointment.appointment",
-      "mappedBy": "patient"
+      "mappedBy": "doctor"
     },
     "reviews": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::review.review",
-      "mappedBy": "patient"
+      "mappedBy": "doctor"
     },
-    "password": {
-      "type": "password",
-      "required": true,
-      "private": true
+    "available_slots": {
+      "type": "json"
     }
   }
 }
